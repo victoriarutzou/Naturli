@@ -1,0 +1,210 @@
+
+/*FONTS*/
+h1 {font-family: 'Fredoka One', cursive;}
+h2 {font-family: 'Fredoka One', cursive;}
+h3 {font-family: 'Delius', cursive;}
+h4 {font-family: 'Delius', cursive;}
+p {font-family: 'Quicksand', sans-serif;}
+a {
+    font-family: 'Delius', cursive;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    color: #1c4071;
+}
+
+/*COLORS*/
+.darkblue {color: #1c4071}
+.darkgreen {color: #589c83}
+.green {color: #8fb56c;}
+.orange {color: #e6903b}
+.darkorange {color: #de703b}
+.red {color: #e44b45}
+
+
+
+/*NAVIGATIONSBAR*/
+
+.navlinks,
+.navlinksmobile {display: none;} /* fjerner navigationen til laptop, og fjerner navigation til mobil indtil der trykkes på burgerikonet*/
+
+
+nav {
+    display: grid;
+    grid-gap: 10px; /*mellemrum mellem grid areas*/
+    grid-template-columns: 4fr 4fr 1fr; /*opdeler navigationsbaren i 3 dele: logo, mellemrum og burgermenu*/
+    align-items: center; /* Så logo og burgermenu står på linje*/  
+}
+
+
+.logo {
+    max-width: 150px; 
+}
+
+
+.btn {
+    background-image: url(photos/bars.svg);
+    background-repeat: no-repeat;
+    border-style: none;
+    width: 100%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    padding-bottom: 10px;
+}
+/*
+.barscontainer { 
+    display: flex;
+    justify-content: end; /*sørger for at burgerikonet er helt til højre*/
+}
+
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; /*så det placeres i midten*/
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: white;
+    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+    }
+    
+.dropdown-content a {
+    display: block;
+    align-items: center;
+    color:#1c4071;
+    padding: 20px;
+    text-decoration: none;
+    }
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color:#de703b;
+    }
+
+ 
+
+
+
+/*så mit design går helt ud til kanterne, og der ikke er margin eller padding*/
+/*html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    } */
+
+
+
+
+
+
+  /* EXTRA SMALL DEVICES (phones, 600px and down) */
+  /* BURGERMENU*/
+@media only screen and (max-width: 600px) {
+    .example {background: red;}
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* SMALL DEVICES (portrait tablets and large phones, 600px and up) */
+  /*BURGERMENU*/
+  @media only screen and (min-width: 600px) {
+    .example {background: green;}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* MEDIUM DEVICES (landscape tablets, 768px and up) */
+  /*NORMAL MENU*/
+@media only screen and (min-width: 768px) {
+    .example {background: blue;}
+
+
+ } 
+
+  
+
+
+
+
+
+
+
+  /* LARGE DEVICES (laptops/desktops, 992px and up) */
+  /*NORMAL MENU - kode står i Medium devices*/
+  @media only screen and (min-width: 992px) {
+    .example {background: orange;}
+
+   /*NAVIGATIONS BAREN*/
+    
+    .btn,
+    .navlinksmobile {
+        display: none;/*fjerner burgermenu og mobil navigation*/
+    
+    } 
+
+    
+  
+    nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr; /* Opdeler navigationen i tre dele: logo, mellemrum, links*/
+        align-items: center; /*Så logo og links står på linje*/
+        background-color: #fff; /*Baggrundsfarve for navigations baren*/
+        font-size: 1.3vw; /*Font størrelse der er relativ i til viewport*/
+    }
+  
+
+    .navlinks {
+      display: flex;
+      justify-content: space-around; /*Så der er mellemrum mellem linksne*/
+    }
+  } 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  /*NORMAL MENU - kode står i Medium devices*/
+  @media only screen and (min-width: 1200px) {
+    .example {background: pink;}
+  }
