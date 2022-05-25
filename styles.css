@@ -30,7 +30,7 @@
  /*COLORS*/
  .darkblue {color: #1c4071}
  .darkgreen {color: #589c83}
- .green {color: #8fb56c;}
+ .green1 {color: #8fb56c;}
  .orange {color: #e6903b}
  .darkorange {color: #de703b}
  .red {color: #e44b45}
@@ -44,6 +44,17 @@
  .navlinksmobile,
  .extralogo {display: none;} /* skjuler navigationen til laptop, navigationen til mobil indtil der trykkes på burgerikonet, og det ekstra logo*/
 
+ body {
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-areas: "nav"
+                        "header"
+                        "products"
+                        "recipes"
+                        "articles"
+                        "games"
+                        "footer";
+ }
  nav {
         display: grid;
         grid-gap: 10px; /*mellemrum mellem grid areas*/
@@ -109,7 +120,7 @@
  header {
         background-image: url(photos/heroimage_600.png);
         background-repeat: no-repeat;
-        height: 483px; /*Så headeren er billedets fulde højde*/
+        height: 539px; /*Så headeren er billedets fulde højde*/
     }
 
  .herotext {
@@ -134,6 +145,16 @@
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
+ }
+
+ 
+ 
+
+ /*PRODUCTS SECTIONS*/
+ .products {
+     background-color: #8fb56c;
+     height: 600px;
+     width:100%;
  }
 
 
@@ -175,7 +196,7 @@
         header {
             background-image: url(photos/heroimage_992.png);
             background-repeat: no-repeat;
-            height: 801px;
+            height: 456px;
         }
 
         .herotext {
@@ -199,8 +220,6 @@
   /*Burger menu*/
  @media only screen and (min-width: 768px) {
         .example {background: blue;}
-        
-        
         
     } 
 
@@ -227,6 +246,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 3fr; /* Opdeler navigationen i tre dele: logo, mellemrum, links*/
+            grid-template-rows: ;
             align-items: center; /*Så logo og links står på linje*/
             background-color: #fff; /*Baggrundsfarve for navigations baren*/
             font-size: 0.5vw; /*Font størrelse der er relativ i til viewport*/
@@ -238,9 +258,10 @@
         /*HEADER*/
         header {
             background-image: url(photos/heroimage_1200.png);
-            
-            height: 1335px;
+            background-repeat: no-repeat;
+            height: 540px;
         }  
+
     } 
   
 
@@ -272,13 +293,14 @@
         header {
             background-image: url(photos/heroimage_1500.png);
             background-repeat: no-repeat;
-            height: 1001px;
+            height: 680px;
         }
 
         .extralogo {
             display: block;
             width: 25vw;
         }
+        
     }
 
 
@@ -317,6 +339,9 @@
     header {
         background-image: url(photos/heroimage_2000.png);
         background-repeat: no-repeat;
-        height: 1001px;
+        height: 848px;
     }
+
+   
+    
 }
