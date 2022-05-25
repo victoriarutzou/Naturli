@@ -1,100 +1,140 @@
 
-/*FONTS*/
-h1 {font-family: 'Fredoka One', cursive;}
-h2 {font-family: 'Fredoka One', cursive;}
-h3 {font-family: 'Delius', cursive;}
-h4 {font-family: 'Delius', cursive;}
-p {font-family: 'Quicksand', sans-serif;}
-a {
-    font-family: 'Delius', cursive;
-    font-weight: 800;
-    text-decoration: none;
-    cursor: pointer;
-    color: #1c4071;
-}
-
-/*COLORS*/
-.darkblue {color: #1c4071}
-.darkgreen {color: #589c83}
-.green {color: #8fb56c;}
-.orange {color: #e6903b}
-.darkorange {color: #de703b}
-.red {color: #e44b45}
+ /*FONTS*/
+ /*Tekststørrelserne følger denne guide https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html*/
+ /*Header text*/   
+ h1 {
+        font-family: 'Fredoka One', cursive;
+        font-size: 4vw;
+    }
+ h2 {
+        font-family: 'Delius', cursive;
+        font-size: 3.5vw;
+    }
 
 
+ p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+ a {
+        font-family: 'Delius', cursive;
+        font-weight: 800;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        color: #1c4071;
+    }
 
-/*NAVIGATIONSBAR*/
+ .blue {color:#1c4071} /*Til blåt tekst*/
 
-.navlinks,
-.navlinksmobile {display: none;} /* fjerner navigationen til laptop, og fjerner navigation til mobil indtil der trykkes på burgerikonet*/
-
-
-nav {
-    display: grid;
-    grid-gap: 10px; /*mellemrum mellem grid areas*/
-    grid-template-columns: 4fr 4fr 1fr; /*opdeler navigationsbaren i 3 dele: logo, mellemrum og burgermenu*/
-    align-items: center; /* Så logo og burgermenu står på linje*/  
-}
+ /*COLORS*/
+ .darkblue {color: #1c4071}
+ .darkgreen {color: #589c83}
+ .green {color: #8fb56c;}
+ .orange {color: #e6903b}
+ .darkorange {color: #de703b}
+ .red {color: #e44b45}
 
 
-.logo {
-    max-width: 150px; 
-}
 
 
-.btn {
-    background-image: url(photos/bars.svg);
-    background-repeat: no-repeat;
-    border-style: none;
-    width: 100%;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    padding-bottom: 10px;
-}
-/*
-.barscontainer { 
+ /*MOBILE - 600px width and down*/
+ /*NAVIGATIONSBAR*/
+ .navlinks,
+ .navlinksmobile,
+ .extralogo {display: none;} /* skjuler navigationen til laptop, navigationen til mobil indtil der trykkes på burgerikonet, og det ekstra logo*/
+
+ nav {
+        display: grid;
+        grid-gap: 10px; /*mellemrum mellem grid areas*/
+        grid-template-columns: 4fr 4fr 1fr; /*opdeler navigationsbaren i 3 dele: logo, mellemrum og burgermenu*/
+        align-items: center; /* Så logo og burgermenu står på linje*/  
+    }
+
+ .logo {
+        max-width: 150px; 
+    }
+
+ .btn {
+        background-image: url(photos/bars.svg);
+        background-repeat: no-repeat;
+        border-style: none;
+        width: 100%;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        padding-bottom: 10px;
+    }
+ /*
+ .barscontainer { 
     display: flex;
     justify-content: end; /*sørger for at burgerikonet er helt til højre*/
-}
+ }*/
 
 
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; /*så det placeres i midten*/
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background-color: white;
+ .dropdown {
+        display: inline-block;
+        position: relative;
     }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    
+ .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0; /*så det placeres i midten*/
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        background-color: white;
+    }
+
+ .dropdown:hover .dropdown-content {
+        display: block; 
     }
     
-.dropdown-content a {
-    display: block;
-    align-items: center;
-    color:#1c4071;
-    padding: 20px;
+ .dropdown-content a {
+        display: block;
+        align-items: center;
+        color:#1c4071;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+ .dropdown-content a:hover {
+        color: #FFFFFF;
+        background-color:#de703b;
+    }
+
+ /*HEADER*/
+ header {
+        background-image: url(photos/heroimage_600.png);
+        background-repeat: no-repeat;
+        height: 483px; /*Så headeren er billedets fulde højde*/
+    }
+
+ .herotext {
+        z-index: 1; /*så den ligger ovenpå billedet*/
+        max-width:35vw;
+        padding: 2vw;
+    }
+
+ .btn1 {
+    background-color:#e6903b;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
     text-decoration: none;
-    }
-
-.dropdown-content a:hover {
-    color: #FFFFFF;
-    background-color:#de703b;
-    }
-
- 
-
+    display: inline-block;
+    font-size: 16px;
+    width: max-content;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: 'Delius', cursive;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+ }
 
 
 /*så mit design går helt ud til kanterne, og der ikke er margin eller padding*/
@@ -109,11 +149,8 @@ nav {
 
 
 
-  /* EXTRA SMALL DEVICES (phones, 600px and down) */
-  /* BURGERMENU*/
-@media only screen and (max-width: 600px) {
-    .example {background: red;}
-  }
+  
+ 
   
 
 
@@ -126,11 +163,25 @@ nav {
 
 
 
-  /* SMALL DEVICES (portrait tablets and large phones, 600px and up) */
-  /*BURGERMENU*/
-  @media only screen and (min-width: 600px) {
-    .example {background: green;}
-  }
+ /* TABLETS AND LARGE PHONES (600px and up) */
+ /*BURGERMENU*/
+ @media only screen and (min-width: 600px) {
+        .example {background: green;}
+        /*Fonts*/
+        h2 {font-size: 2.2vw;}
+        h1 {font-size: 3vw;}
+        
+        /*HEADER*/
+        header {
+            background-image: url(photos/heroimage_992.png);
+            background-repeat: no-repeat;
+            height: 801px;
+        }
+
+        .herotext {
+        max-width:35vw;
+        }
+    }
 
 
 
@@ -144,52 +195,15 @@ nav {
 
 
 
-  /* MEDIUM DEVICES (landscape tablets, 768px and up) */
-  /*NORMAL MENU*/
-@media only screen and (min-width: 768px) {
-    .example {background: blue;}
-
-
- } 
-
-  
-
-
-
-
-
-
-
-  /* LARGE DEVICES (laptops/desktops, 992px and up) */
-  /*NORMAL MENU - kode står i Medium devices*/
-  @media only screen and (min-width: 992px) {
-    .example {background: orange;}
-
-   /*NAVIGATIONS BAREN*/
-    
-    .btn,
-    .navlinksmobile {
-        display: none;/*fjerner burgermenu og mobil navigation*/
-    
+  /* BIG TABLETS (768px and up) */
+  /*Burger menu*/
+ @media only screen and (min-width: 768px) {
+        .example {background: blue;}
+        
+        
+        
     } 
 
-    
-  
-    nav {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 2fr 3fr; /* Opdeler navigationen i tre dele: logo, mellemrum, links*/
-        align-items: center; /*Så logo og links står på linje*/
-        background-color: #fff; /*Baggrundsfarve for navigations baren*/
-        font-size: 1.3vw; /*Font størrelse der er relativ i til viewport*/
-    }
-  
-
-    .navlinks {
-      display: flex;
-      justify-content: space-around; /*Så der er mellemrum mellem linksne*/
-    }
-  } 
   
 
 
@@ -198,13 +212,111 @@ nav {
 
 
 
+ /* LAPTOP (992px and up) */
+ /*NORMAL MENU*/
+ @media only screen and (min-width: 992px) {
+        .example {background: orange;}
+
+        /*NAVIGATIONS BAREN*/
+        .btn,
+        .navlinksmobile {
+            display: none;/*fjerner burgermenu og mobil navigation*/
+        
+        } 
+        nav {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 3fr; /* Opdeler navigationen i tre dele: logo, mellemrum, links*/
+            align-items: center; /*Så logo og links står på linje*/
+            background-color: #fff; /*Baggrundsfarve for navigations baren*/
+            font-size: 0.5vw; /*Font størrelse der er relativ i til viewport*/
+        }
+        .navlinks {
+            display: flex;
+            justify-content: space-around; /*Så der er mellemrum mellem linksne*/
+        } 
+        /*HEADER*/
+        header {
+            background-image: url(photos/heroimage_1200.png);
+            
+            height: 1335px;
+        }  
+    } 
+  
 
 
 
 
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
+
+
+
+
+
+
+
+  /*LARGE LAPTOP (1200px and up) */
   /*NORMAL MENU - kode står i Medium devices*/
+  
   @media only screen and (min-width: 1200px) {
-    .example {background: pink;}
-  }
+        .example {background: pink;}
+        /*Fonts*/
+        h2 {font-size: 1.5vw;}
+        h1 {font-size: 2.5vw;}
+        /*NAV*/
+        nav {
+            grid-template-columns: 1fr 2fr 3fr; /* Mere mellemrum mellem logo og links*/
+            font-size: 1vw; /*større font størrelse*/
+        }
+        /*HEADER*/
+        header {
+            background-image: url(photos/heroimage_1500.png);
+            background-repeat: no-repeat;
+            height: 1001px;
+        }
+
+        .extralogo {
+            display: block;
+            width: 25vw;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*________________________________________________________________________________________________________________*/
+
+
+
+
+
+
+    /*LARGE LAPTOP (1500px and up) */
+  /*NORMAL MENU - kode står i Medium devices*/
+  
+  @media only screen and (min-width: 1500px) {
+    /*HEADER*/
+    header {
+        background-image: url(photos/heroimage_2000.png);
+        background-repeat: no-repeat;
+        height: 1001px;
+    }
+}
