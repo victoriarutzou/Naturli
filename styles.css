@@ -2,7 +2,7 @@
  /*FONTS*/
  h1 {
         font-family: 'Fredoka One', cursive;
-        font-size: 4vw;
+        font-size: 6vw;
     }
  h2 {
         font-family: 'Delius', cursive;
@@ -27,7 +27,8 @@
     color: #1c4071;
  }
  .padding {
-     padding: 10px;
+     
+     padding-left: 20px;
  }
 
  /*COLORS*/
@@ -58,20 +59,12 @@
  .boy, /*skjuler artikel der først kommer på en større skærm*/
  .boytext, /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
  .cooking, /*skjuler artikel der først kommer på en større skærm*/
- .cookingtext /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
+ .cookingtext, /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
+ .articles, /*skjuler laptop-layoutet til articles*/
+ .recipes /*skjuler laptop-layoutet til articles*/
  {display: none;} 
 
- body {
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-template-areas: "nav"
-                        "header"
-                        "products"
-                        "recipes"
-                        "articles"
-                        "games"
-                        "footer";
- }
+ 
 
 /*NAVIGATIONSBAR*/
  nav {
@@ -188,18 +181,7 @@
         width:100%;
         display: grid;
         grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
-        grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 60px; /*11 rækker*/
-        grid-area: ". sectiontext leaf"
-                    ". product1 ."   
-                    ". text1 ."
-                        "..."     
-                    "leaf product2 ." 
-                    ". text2 ."
-                        "..."
-                    ". product3 ." 
-                    ". text3 ."
-                        "..."  
-                    ". button ."    ;
+        grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 85px; /*11 rækker*/
         justify-items: center;
         align-items: center;
     }
@@ -231,8 +213,34 @@
     width:200px;
     border-radius: 12px;
  }
-
  
+ .articlesmobile, 
+ .recipesmobile {
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: repeat(2, 220px 70px 20px) 50px; /*8 rækker*/
+     align-items: center;
+     justify-items: center;
+ }
+ 
+ 
+ .pestosandwich {
+    background-image: url(photos/pestosandwich.png);
+    background-repeat: no-repeat;
+    }
+ 
+  .pizzasnegle {
+    background-image: url(photos/pizzasnegle.png);
+    background-repeat: no-repeat;
+     }
+  .backpack {
+     background-image: url(photos/backpack.png);
+     background-repeat: no-repeat;
+  }
+  .newfood {
+     background-image: url(photos/newfood.png);
+     background-repeat: no-repeat;
+  }
     
 
 
@@ -249,7 +257,11 @@
  /* MOBILES (468px and up) */
  /*BURGERMENU*/
  @media only screen and (min-width: 461px){
-/*RECIPES*/
+ /*RECIPES*/
+ .recipesmobile,
+ .articlesmobile {
+    display: none;
+ }
 .recipes,
 .articles {
     display: grid;
@@ -267,24 +279,6 @@
    .newfoodtext {
     display: inline-block;
    }
-
- .pestosandwich {
-   background-image: url(photos/pestosandwich.png);
-   background-repeat: no-repeat;
-   }
-
- .pizzasnegle {
-   background-image: url(photos/pizzasnegle.png);
-   background-repeat: no-repeat;
-    }
- .backpack {
-    background-image: url(photos/backpack.png);
-    background-repeat: no-repeat;
- }
- .newfood {
-    background-image: url(photos/newfood.png);
-    background-repeat: no-repeat;
- }
 
  .readmore {
    grid-column: col / span 2;
