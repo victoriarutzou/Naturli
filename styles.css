@@ -1,7 +1,5 @@
 
  /*FONTS*/
- /*Tekststørrelserne følger denne guide https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html*/
- /*Header text*/   
  h1 {
         font-family: 'Fredoka One', cursive;
         font-size: 4vw;
@@ -33,7 +31,6 @@
  }
 
  /*COLORS*/
- /*TEXT*/
  .blue {color: #1c4071}
  .darkgreen {color: #589c83}
  .green {color: #8fb56c;}
@@ -42,9 +39,8 @@
  .red {color: #e44b45}
  .white {color:#fff}
 
-
-
  /*MOBILE - 600px width and down*/
+
  /*HVAD DER IKKE SKAL VISES PÅMOBILVERSION*/
  .navlinks, /*skjuler navigationen til laptop*/
  .navlinksmobile, /*skjuler navigationnen til mobil indtil der trykkes på burgermenu*/
@@ -56,7 +52,13 @@
  .tortila, /*skjuler opskrift der først kommer på en større skærm*/
  .tortilatext, /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
  .vitamintoast, /*skjuler opskrift der først kommer på en større skærm*/
- .vitamintoasttext /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
+ .vitamintoasttext, /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
+ .boywithhat, /*skjuler artikel der først kommer på en større skærm*/
+ .boywithhattext, /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
+ .boy, /*skjuler artikel der først kommer på en større skærm*/
+ .boytext, /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
+ .cooking, /*skjuler artikel der først kommer på en større skærm*/
+ .cookingtext /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
  {display: none;} 
 
  body {
@@ -206,6 +208,30 @@
         width:15vw;
     }
 
+ /*RECIPES*/
+ .articletext { /*Styling af tekstboksene under artikler og opskrifter*/
+    background-color: #8fb56c;
+    max-width: 150px;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-family: 'Delius', cursive;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+ }
+
+ .squareimage { /*styling af billederne til opskrifterne og artiklerne*/
+    height: 200px;
+    width:200px;
+    border-radius: 12px;
+ }
+
  
     
 
@@ -224,7 +250,8 @@
  /*BURGERMENU*/
  @media only screen and (min-width: 461px){
 /*RECIPES*/
-.recipes {
+.recipes,
+.articles {
     display: grid;
     background-color: white;
     width:100%;
@@ -234,43 +261,32 @@
     align-items: center;
    }
 
-   .pestosandwichtext,
-   .pizzasnegletext {
-    background-color: #8fb56c;
-    max-width: 150px;
-    border: none;
-    color: white;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
+   .pestosandwichtext, /*teksterne til to opskrifter og to artikler vises*/
+   .pizzasnegletext,
+   .backpacktext,
+   .newfoodtext {
     display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-family: 'Delius', cursive;
-    cursor: pointer;
-    margin-top: 5px;
-    margin-bottom: 5px;
-       
    }
 
-   .squareimage {
-       height: 200px;
-       width:200px;
-       border-radius: 12px;
-   }
-
-.pestosandwich {
+ .pestosandwich {
    background-image: url(photos/pestosandwich.png);
    background-repeat: no-repeat;
    }
 
-.pizzasnegle {
+ .pizzasnegle {
    background-image: url(photos/pizzasnegle.png);
    background-repeat: no-repeat;
-}
+    }
+ .backpack {
+    background-image: url(photos/backpack.png);
+    background-repeat: no-repeat;
+ }
+ .newfood {
+    background-image: url(photos/newfood.png);
+    background-repeat: no-repeat;
+ }
 
-.readmore {
+ .readmore {
    grid-column: col / span 2;
    grid-row: row 3;
 }
@@ -338,7 +354,8 @@
         .example {background: blue;}
 
         /*RECIPES*/
-        .recipes {
+        .recipes,
+        .articles {
             display: grid;
             background-color: white;
             width:100%;
@@ -356,23 +373,19 @@
         }
 
         .parisertoasttext { /*teksten til parisertoast opskrift vises*/
-            display: block;
-            background-color: #8fb56c;
-            max-width: 150px;
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            text-align: center;
-            text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            font-family: 'Delius', cursive;
-            cursor: pointer;
-            margin-top: 5px;
-            margin-bottom: 5px;
         }
+
+        .boywithhat { /*artiklen "Sådan taler du med dit barn om hvor mad kommer fra" vises*/
+            display: block;
+            background-image: url(photos/boywithhat.png);
+            background-repeat: no-repeat;
+        }
+
+        .boywithhattext { /*tekstboksen til ovenstående artikel vises*/
+            display: inline-block;
+        }
+
         .readmore {
         grid-column: col / span 3;
         grid-row: row 3;
@@ -441,7 +454,8 @@
         }
 
         /*RECIPES*/
-        .recipes {
+        .recipes,
+        .articles {
             display: grid;
             background-color: white;
             width:100%;
@@ -458,24 +472,19 @@
         }
 
         .tortilatext { /*teksten til parisertoast opskrift vises*/
-            display: block;
-            display: block;
-            background-color: #8fb56c;
-            max-width: 150px;
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            text-align: center;
-            text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            font-family: 'Delius', cursive;
-            cursor: pointer;
-            margin-top: 5px;
-            margin-bottom: 5px;
         }
+
+        .boy { /*artiklen "7 tips til at få dit barn involveret i madlavningen" vises*/
+            display: block;
+            background-image: url(photos/boy.png);
+            background-repeat: no-repeat;
+        }
+
+        .boytext { /*tekstboksen til ovenstående artikel vises*/
+            display: inline-block;
+        }
+
         .readmore {
         grid-column: col / span 4;
         grid-row: row 3;
@@ -522,7 +531,8 @@
         }
 
          /*RECIPES*/
-         .recipes {
+         .recipes,
+         .articles {
             display: grid;
             background-color: white;
             width:100%;
@@ -539,22 +549,19 @@
         }
 
         .vitamintoasttext { /*teksten til vitamin-booster toasten opskrift vises*/
-            background-color: #8fb56c;
-            max-width: 150px;
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            text-align: center;
-            text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            font-family: 'Delius', cursive;
-            cursor: pointer;
-            margin-top: 5px;
-            margin-bottom: 5px;
         }
+
+        .cooking { /*artiklen "Lær dit barn om sundhed gennem madlavning" vises*/
+            display: block;
+            background-image: url(photos/cooking.png);
+            background-repeat: no-repeat;
+        }
+
+        .cookingtext { /*tekstboksen til ovenstående artikel vises*/
+            display: inline-block;
+        }
+
         .readmore {
         grid-column: col / span 5;
         grid-row: row 3;
