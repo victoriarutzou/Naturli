@@ -18,14 +18,22 @@
     }
  a {
         font-family: 'Delius', cursive;
-        font-weight: 800;
         font-size: 16px;
         text-decoration: none;
         cursor: pointer;
-        color: #1c4071;
     }
 
+ .navlinks > a,
+ .navlinksmobile a {
+    font-weight: 800;
+    color: #1c4071;
+ }
+ .padding {
+     padding: 10px;
+ }
+
  /*COLORS*/
+ /*TEXT*/
  .blue {color: #1c4071}
  .darkgreen {color: #589c83}
  .green {color: #8fb56c;}
@@ -36,14 +44,19 @@
 
 
 
-
  /*MOBILE - 600px width and down*/
- /*NAVIGATIONSBAR*/
+ /*HVAD DER IKKE SKAL VISES PÅMOBILVERSION*/
  .navlinks, /*skjuler navigationen til laptop*/
  .navlinksmobile, /*skjuler navigationnen til mobil indtil der trykkes på burgermenu*/
  .extralogo, /*skjuler det ekstra logo, som kun kommer frem på large laptop, hvor der er plads*/
  .productlarge, /*skjuler de store produkt billeder*/
- .products /*skjuler tablet/laptop layoutet for products*/
+ .products, /*skjuler tablet/laptop layoutet for products*/
+ .parisertoast, /*skjuler opskrift der først kommer på en større skærm*/
+ .parisertoasttext, /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
+ .tortila, /*skjuler opskrift der først kommer på en større skærm*/
+ .tortilatext, /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
+ .vitamintoast, /*skjuler opskrift der først kommer på en større skærm*/
+ .vitamintoasttext /* skjuler teksten til en opskrift, der først kommer på en større skærm*/
  {display: none;} 
 
  body {
@@ -57,6 +70,8 @@
                         "games"
                         "footer";
  }
+
+/*NAVIGATIONSBAR*/
  nav {
         display: grid;
         grid-gap: 10px; /*mellemrum mellem grid areas*/
@@ -132,7 +147,97 @@
     }
 
  .btn1 {
-    background-color:#e6903b;
+        background-color:#e6903b;
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: max-content;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        font-family: 'Delius', cursive;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+ 
+ 
+ /*PRODUCTS SECTION*/
+ .sectiontext { /*styling til sektionens headline*/
+        background-color: white;
+        border: none;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        width: max-content;
+        border-radius: 12px;
+        font-family: 'Fredoka One', cursive;
+        font-size: 3.5vw;
+    }
+
+
+ .productsmobile {
+        background-color: #8fb56c;
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
+        grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 60px; /*11 rækker*/
+        grid-area: ". sectiontext leaf"
+                    ". product1 ."   
+                    ". text1 ."
+                        "..."     
+                    "leaf product2 ." 
+                    ". text2 ."
+                        "..."
+                    ". product3 ." 
+                    ". text3 ."
+                        "..."  
+                    ". button ."    ;
+        justify-items: center;
+        align-items: center;
+    }
+ .leaf {
+        z-index: 4;
+        width:15vw;
+    }
+
+ 
+    
+
+
+  
+ 
+  
+
+
+
+
+
+
+
+ /* MOBILES (468px and up) */
+ /*BURGERMENU*/
+ @media only screen and (min-width: 461px){
+/*RECIPES*/
+.recipes {
+    display: grid;
+    background-color: white;
+    width:100%;
+    grid-template-columns: [col] 1fr [col] 1fr; /*opdeler sektionen i to lige store dele*/
+    grid-template-rows: [row] 200px [row] 100px [row] 100px;
+    justify-items: center;
+    align-items: center;
+   }
+
+   .pestosandwichtext,
+   .pizzasnegletext {
+    background-color: #8fb56c;
+    max-width: 150px;
     border: none;
     color: white;
     padding: 10px 25px;
@@ -140,73 +245,36 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    width: max-content;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-family: 'Delius', cursive;
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
+       
+   }
+
+   .squareimage {
+       height: 200px;
+       width:200px;
+       border-radius: 12px;
+   }
+
+.pestosandwich {
+   background-image: url(photos/pestosandwich.png);
+   background-repeat: no-repeat;
+   }
+
+.pizzasnegle {
+   background-image: url(photos/pizzasnegle.png);
+   background-repeat: no-repeat;
+}
+
+.readmore {
+   grid-column: col / span 2;
+   grid-row: row 3;
+}
  }
-
- 
- 
- /*PRODUCTS SECTION*/
- .sectiontext { /*styling til sektionens headline*/
-    background-color: white;
-    border: none;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: max-content;
-    border-radius: 12px;
-    font-family: 'Fredoka One', cursive;
-    font-size: 3.5vw;
-}
-
-
- .productsmobile {
-    background-color: #8fb56c;
-    width:100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
-    grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 60px; /*11 rækker*/
-    grid-area: ". sectiontext leaf"
-                ". product1 ."   
-                ". text1 ."
-                    "..."     
-                "leaf product2 ." 
-                ". text2 ."
-                    "..."
-                ". product3 ." 
-                ". text3 ."
-                    "..."  
-                ". button ."    ;
-    justify-items: center;
-    align-items: center;
-}
-
-
-
-.leaf {
-    z-index: 4;
-    width:15vw;
-}
-
-
-
-  
- 
-  
-
-
-
-
-
-
-
-
 
 
 
@@ -268,7 +336,47 @@
   /*Burger menu*/
  @media only screen and (min-width: 768px) {
         .example {background: blue;}
-        
+
+        /*RECIPES*/
+        .recipes {
+            display: grid;
+            background-color: white;
+            width:100%;
+            grid-template-columns: [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i tre lige store dele*/
+            grid-template-rows: [row] 200px [row] 100px [row] 100px;
+            justify-items: center;
+            align-items: center;
+        }
+
+
+        .parisertoast { /*parisertoast opskrift tilføjes*/
+            display: block;
+            background-image: url(photos/parisertoast.png);
+            background-repeat: no-repeat;
+        }
+
+        .parisertoasttext { /*teksten til parisertoast opskrift vises*/
+            display: block;
+            background-color: #8fb56c;
+            max-width: 150px;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            font-family: 'Delius', cursive;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .readmore {
+        grid-column: col / span 3;
+        grid-row: row 3;
+        }
         
     } 
 
@@ -332,6 +440,48 @@
             align-items: center;
         }
 
+        /*RECIPES*/
+        .recipes {
+            display: grid;
+            background-color: white;
+            width:100%;
+            grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i fire lige store dele*/
+            grid-template-rows: [row] 200px [row] 100px [row] 100px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .tortila { /*tortila opskrift tilføjes*/
+            display: block;
+            background-image: url(photos/tortila.png);
+            background-repeat: no-repeat;
+        }
+
+        .tortilatext { /*teksten til parisertoast opskrift vises*/
+            display: block;
+            display: block;
+            background-color: #8fb56c;
+            max-width: 150px;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            font-family: 'Delius', cursive;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .readmore {
+        grid-column: col / span 4;
+        grid-row: row 3;
+        }
+        
+
     } 
   
 
@@ -370,6 +520,45 @@
             display: block;
             width: 25vw;
         }
+
+         /*RECIPES*/
+         .recipes {
+            display: grid;
+            background-color: white;
+            width:100%;
+            grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i fem lige store dele*/
+            grid-template-rows: [row] 200px [row] 100px [row] 100px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .vitamintoast { /*vitamin-booster opskriften tilføjes*/
+            display: block;
+            background-image: url(photos/vitamintoast.png);
+            background-repeat: no-repeat;
+        }
+
+        .vitamintoasttext { /*teksten til vitamin-booster toasten opskrift vises*/
+            background-color: #8fb56c;
+            max-width: 150px;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            font-family: 'Delius', cursive;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .readmore {
+        grid-column: col / span 5;
+        grid-row: row 3;
+        }
         
     }
 
@@ -394,7 +583,7 @@
 
 
 
-/*________________________________________________________________________________________________________________*/
+ /*________________________________________________________________________________________________________________*/
 
 
 
