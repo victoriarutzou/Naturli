@@ -25,24 +25,26 @@
         color: #1c4071;
     }
 
- .blue {color:#1c4071} /*Til blåt tekst*/
-
  /*COLORS*/
- .darkblue {color: #1c4071}
+ .blue {color: #1c4071}
  .darkgreen {color: #589c83}
- .green1 {color: #8fb56c;}
+ .green {color: #8fb56c;}
  .orange {color: #e6903b}
  .darkorange {color: #de703b}
  .red {color: #e44b45}
+ .white {color:#fff}
 
 
 
 
  /*MOBILE - 600px width and down*/
  /*NAVIGATIONSBAR*/
- .navlinks,
- .navlinksmobile,
- .extralogo {display: none;} /* skjuler navigationen til laptop, navigationen til mobil indtil der trykkes på burgerikonet, og det ekstra logo*/
+ .navlinks, /*skjuler navigationen til laptop*/
+ .navlinksmobile, /*skjuler navigationnen til mobil indtil der trykkes på burgermenu*/
+ .extralogo, /*skjuler det ekstra logo, som kun kommer frem på large laptop, hvor der er plads*/
+ .productlarge, /*skjuler de store produkt billeder*/
+ .products /*skjuler tablet/laptop layoutet for products*/
+ {display: none;} 
 
  body {
      display: grid;
@@ -66,7 +68,7 @@
         max-width: 150px; 
     }
 
- .btn {
+ .btn { /*Burger menu*/
         background-image: url(photos/bars.svg);
         background-repeat: no-repeat;
         border-style: none;
@@ -149,24 +151,48 @@
 
  
  
-
- /*PRODUCTS SECTIONS*/
- .products {
-     background-color: #8fb56c;
-     height: 600px;
-     width:100%;
- }
-
-
-/*så mit design går helt ud til kanterne, og der ikke er margin eller padding*/
-/*html {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    } */
+ /*PRODUCTS SECTION*/
+ .sectiontext { /*styling til sektionens headline*/
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: max-content;
+    border-radius: 12px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5vw;
+}
 
 
+ .productsmobile {
+    background-color: #8fb56c;
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
+    grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 60px; /*11 rækker*/
+    grid-area: ". sectiontext leaf"
+                ". product1 ."   
+                ". text1 ."
+                    "..."     
+                "leaf product2 ." 
+                ". text2 ."
+                    "..."
+                ". product3 ." 
+                ". text3 ."
+                    "..."  
+                ". button ."    ;
+    justify-items: center;
+    align-items: center;
+}
 
+
+
+.leaf {
+    z-index: 4;
+    width:15vw;
+}
 
 
 
@@ -202,6 +228,28 @@
         .herotext {
         max-width:35vw;
         }
+        /*PRODUCTS SECTIONS*/
+        .productsmobile { /*skjuler mobile layoutet for products*/
+            display: none;
+        }
+        .sectiontext {
+            font-size: 2vw;
+        }
+        .products {
+            background-color: #8fb56c;
+            width:100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /*opdeler products sektionen i tre lige store dele*/
+            grid-template-rows: 100px 250px 60px 100px; /*giver hver af de 3 kollonner 4 rækker*/
+            grid-area: "    .     sectiontext leaf"
+                        "product   product   product"
+                        "text1     text2     text3"
+                        "   .       button    .";
+            justify-items: center;
+            align-items: center;
+        }
+
+        
     }
 
 
@@ -220,6 +268,7 @@
   /*Burger menu*/
  @media only screen and (min-width: 768px) {
         .example {background: blue;}
+        
         
     } 
 
@@ -260,7 +309,28 @@
             background-image: url(photos/heroimage_1200.png);
             background-repeat: no-repeat;
             height: 540px;
-        }  
+        } 
+
+        /*PRODUCTS SECTION*/
+        .productsmall {
+            display: none; /*skjuler de små product-billeder*/
+        }
+        .productlarge {
+            display: block; /*viser de store product-billeder*/
+        }
+        .products {
+            background-color: #8fb56c;
+            width:100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /*opdeler products sektionen i tre lige store dele*/
+            grid-template-rows: 100px 390px 100px 100px; /*giver hver af de 3 kollonner 4 rækker*/
+            grid-area: "    .     sectiontext leaf"
+                        "product   product   product"
+                        "text1     text2     text3"
+                        "   .       button    .";
+            justify-items: center;
+            align-items: center;
+        }
 
     } 
   
@@ -335,13 +405,13 @@
   /*NORMAL MENU - kode står i Medium devices*/
   
   @media only screen and (min-width: 1500px) {
-    /*HEADER*/
-    header {
-        background-image: url(photos/heroimage_2000.png);
-        background-repeat: no-repeat;
-        height: 848px;
-    }
+        /*HEADER*/
+        header {
+            background-image: url(photos/heroimage_2000.png);
+            background-repeat: no-repeat;
+            height: 848px;
+        }
+        
 
-   
     
-}
+    }
