@@ -242,6 +242,17 @@
      background-repeat: no-repeat;
   }
     
+ /*PESTO SANDWICH OPSKRIFT*/
+ .headerrecipe {
+        background-image: url(photos/sandwich_468.png);
+        background-repeat: no-repeat;
+        height: 278px; /*Så headeren er billedets fulde højde*/
+    }
+
+  
+
+   
+   
 
 
   
@@ -283,6 +294,13 @@
  .readmore {
    grid-column: col / span 2;
    grid-row: row 3;
+}
+
+/*PESTO SANDWICH OPSKRIFT*/
+.headerrecipe {
+    background-image: url(photos/sandwich_600.png);
+    background-repeat: no-repeat;
+    height: 539px; /*Så headeren er billedets fulde højde*/
 }
  }
 
@@ -326,8 +344,13 @@
             justify-items: center;
             align-items: center;
         }
-
-        
+    
+        /*PESTO SANDWICH OPSKRIFT*/
+        .headerrecipe {
+            background-image: url(photos/sandwich_768.png);
+            background-repeat: no-repeat;
+            height: 353px;
+        }
     }
 
 
@@ -383,6 +406,12 @@
         .readmore {
         grid-column: col / span 3;
         grid-row: row 3;
+        }
+        /*PESTO SANDWICH OPSKRIFT*/
+        .headerrecipe {
+            background-image: url(photos/sandwich_992.png);
+            background-repeat: no-repeat;
+            height: 456px;
         }
         
     } 
@@ -483,7 +512,12 @@
         grid-column: col / span 4;
         grid-row: row 3;
         }
-        
+        /*PESTO SANDWICH OPSKRIFT*/
+        .headerrecipe {
+            background-image: url(photos/sandwich_1200.png);
+            background-repeat: no-repeat;
+            height: 540px;
+        }
 
     } 
   
@@ -560,6 +594,13 @@
         grid-column: col / span 5;
         grid-row: row 3;
         }
+
+        /*PESTO SANDWICH OPSKRIFT*/
+        .headerrecipe {
+            background-image: url(photos/sandwich_1500.png);
+            background-repeat: no-repeat;
+            height: 644px;
+        }
         
     }
 
@@ -600,6 +641,12 @@
             background-image: url(photos/heroimage_2000.png);
             background-repeat: no-repeat;
             height: 848px;
+        }
+        /*PESTO SANDWICH OPSKRIFT*/
+        .headerrecipe {
+            background-image: url(photos/sandwich_1700.png);
+            background-repeat: no-repeat;
+            height: 744px;
         }
         
 
