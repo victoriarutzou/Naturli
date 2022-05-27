@@ -62,7 +62,9 @@
  .cookingtext, /* skjuler tekstboksen til en artikel, der først kommer på en større skærm*/
  .articles, /*skjuler laptop-layoutet til articles*/
  .recipes, /*skjuler laptop-layoutet til articles*/
- .ingredientslaptop /*skjuler layoutet til laptop til ingredienserne.*/
+ .ingredientslaptop, /*skjuler layoutet til laptop til ingredienserne.*/
+ .space, /*whitespace, der skjules på mobilversion*/
+ .leaf1 /*skjuler dekorativt blad på opskriften*/
  {display: none;} 
 
  
@@ -264,21 +266,33 @@
     max-width: 120px;
     text-align: center;
 }
+
+.stepbystep {
+    display:grid;
+    grid-template-columns: 1fr; 
+    justify-items: center;
+}
+
+
+.stepbystep >img {
+    border-radius: 12px;
+}
+.stepbystep >p {
+    max-width: 340px;
+}
+
+.greens {width: 200px}
+
+.stepbystep > .btn1 {
+    align-self: center;
+}
  
  
     
 
  
 
- /*.productsmobile {
-    background-color: #8fb56c;
-    width:100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
-    /*grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 85px; /*11 rækker*/
-   /* justify-items: center;
-    align-items: center;
-}*/
+ 
   
 
    
@@ -395,6 +409,29 @@
             justify-items: center;
             align-items: center;
         }
+        .stepbystep {
+            display:grid;
+            grid-template-columns: 330px 1fr; 
+            justify-items: center;
+        }
+        
+        .stepbystep >img {
+            border-radius: 12px;
+        }
+        .stepbystep > p {
+            justify-self: start;
+            align-self: start;
+        }
+        .leaf1 {
+        display: block;    
+        width: 100px;
+        justify-self:start;}
+        
+        .greens {width: 200px}
+        
+        .stepbystep > .btn1 {
+            align-self: center;
+        }
     }
 
 
@@ -457,6 +494,7 @@
             background-repeat: no-repeat;
             height: 456px;
         }
+       
         
     } 
 
@@ -557,10 +595,34 @@
         grid-row: row 3;
         }
         /*PESTO SANDWICH OPSKRIFT*/
+        .space {display:block;}
         .headerrecipe {
             background-image: url(photos/sandwich_1200.png);
             background-repeat: no-repeat;
             height: 540px;
+        }
+        .stepbystep {
+            display:grid;
+            grid-template-columns: 330px 2fr 20px 330px 2fr; /*5 kolonner*/
+            grid-template-rows: 100px 220px 220px 220px 220px;
+            justify-items: center;
+        }
+
+        .stepbystep >img {
+            border-radius: 12px;
+        }
+        .stepbystep > p {
+            justify-self: start;
+            align-self: start;
+        }
+        .leaf1 {
+        width: 100px;
+        justify-self:start;}
+
+        .greens {width: 200px}
+
+        .stepbystep > .btn1 {
+            align-self: center;
         }
 
     } 
