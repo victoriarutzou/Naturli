@@ -249,6 +249,17 @@
         height: 278px; /*Så headeren er billedets fulde højde*/
     }
 
+ 
+
+ /*.productsmobile {
+    background-color: #8fb56c;
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /*opdeler products sektionen i tre lige store dele*/
+    /*grid-template-rows: 50px repeat(2, 220px 30px 20px) 150px 30px 20px 85px; /*11 rækker*/
+   /* justify-items: center;
+    align-items: center;
+}*/
   
 
    
@@ -300,7 +311,7 @@
 .headerrecipe {
     background-image: url(photos/sandwich_600.png);
     background-repeat: no-repeat;
-    height: 539px; /*Så headeren er billedets fulde højde*/
+    height: 357px; /*Så headeren er billedets fulde højde*/
 }
  }
 
