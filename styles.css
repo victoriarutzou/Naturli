@@ -64,7 +64,9 @@
  .recipes, /*skjuler laptop-layoutet til articles*/
  .ingredientslaptop, /*skjuler layoutet til laptop til ingredienserne.*/
  .space, /*whitespace, der skjules på mobilversion*/
- .leaf1 /*skjuler dekorativt blad på opskriften*/
+ .leaf1, /*skjuler dekorativt blad på opskriften*/
+ .picturefooter, /*skjuler et dekorativts billede i footeren på mobilversionen*/
+ .footerlaptop /*skjuler laptop layoutet til footeren*/
  {display: none;} 
 
  
@@ -259,36 +261,104 @@
     grid-template-rows: 50px 220px 67px 20px 160px 30px 20px 150px 40px 20px 110px 30px 20px 110px 30px 20px; /*11 rækker*/
     justify-items: center;
     align-items: center;
-}
+ }
 
-.ingredientsmobile > h2,
-.ingredientslaptop > h2 {
+ .ingredientsmobile > h2,
+ .ingredientslaptop > h2 {
     max-width: 120px;
     text-align: center;
-}
+ }
 
-.stepbystep {
+ .stepbystep {
     display:grid;
     grid-template-columns: 1fr; 
     justify-items: center;
-}
+    background-color: white;
+ }
 
 
-.stepbystep >img {
+ .stepbystep >img {
     border-radius: 12px;
-}
-.stepbystep >p {
+ }
+ .stepbystep >p {
     max-width: 340px;
-}
+ }
 
-.greens {width: 200px}
+ .greens {width: 200px}
 
-.stepbystep > .btn1 {
+ .stepbystep > .btn1 {
     align-self: center;
+ }
+ 
+ .greenbackground {
+    background-color: #589c83;
+ }
+
+ /*FOOTER*/
+ /* Style the form element with a border around it */
+form {
+    border: 4px solid #f1f1f1;
+  }
+  
+  /* Add some padding and a green background color to containers */
+  .container {
+    padding: 20px;
+    background-color:#8fb56c;
+  }
+
+  .tilmeldtext {
+    border-radius:12px 12px 0px 0px;
+  }
+
+  .tilmeld {
+    border-radius: 0px 0px 12px 12px;
+  }
+  
+  /* Style the input elements and the submit button */
+  input[type=text], input[type=submit] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color:#e6903b;
+    border-radius: 12px;
+    font-family: 'Delius', cursive;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    border: none;
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
+ 
+  
+
+.logofooter {
+    padding: 10px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
- 
- 
+
+
+ .footertext {
+     text-align: center;
+ }
     
+ .ulfooter {
+    list-style-type: none;
+    font-family: 'Delius', cursive;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-right: 40px;
+}
 
  
 
@@ -320,7 +390,6 @@
 .recipes,
 .articles {
     display: grid;
-    background-color: white;
     width:100%;
     grid-template-columns: [col] 1fr [col] 1fr; /*opdeler sektionen i to lige store dele*/
     grid-template-rows: [row] 200px [row] 100px [row] 100px;
@@ -346,6 +415,7 @@
     background-repeat: no-repeat;
     height: 357px; /*Så headeren er billedets fulde højde*/
 }
+
  }
 
 
@@ -417,6 +487,7 @@
         
         .stepbystep >img {
             border-radius: 12px;
+            padding-bottom: 10px;
         }
         .stepbystep > p {
             justify-self: start;
@@ -432,6 +503,34 @@
         .stepbystep > .btn1 {
             align-self: center;
         }
+       /*FOOTER*/
+       .footermobile { /*skjuler mobile layoutet til footeren*/
+           display: none;
+       }
+
+       .footerlaptop {
+           display: grid;
+           grid-gap: 5vw;
+           grid-template-columns: 1fr 2fr;
+       }
+       .logoandfootertext {
+           justify-self: start;
+           padding-left: 50px;
+       }
+       .ulfooter {
+           text-align: left;
+           padding: 0;
+       }
+       .logofooter {padding:0;}
+
+       .footertext {
+           text-align:left;
+       }
+
+      
+
+
+
     }
 
 
@@ -450,12 +549,13 @@
   /*Burger menu*/
  @media only screen and (min-width: 768px) {
         .example {background: blue;}
-
+        p {
+            font-size: 21px;
+        }
         /*RECIPES*/
         .recipes,
         .articles {
             display: grid;
-            background-color: white;
             width:100%;
             grid-template-columns: [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i tre lige store dele*/
             grid-template-rows: [row] 200px [row] 100px [row] 100px;
@@ -562,7 +662,6 @@
         .recipes,
         .articles {
             display: grid;
-            background-color: white;
             width:100%;
             grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i fire lige store dele*/
             grid-template-rows: [row] 200px [row] 100px [row] 100px;
@@ -668,7 +767,6 @@
          .recipes,
          .articles {
             display: grid;
-            background-color: white;
             width:100%;
             grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr [col] 1fr; /*opdeler sektionen i fem lige store dele*/
             grid-template-rows: [row] 200px [row] 100px [row] 100px;
@@ -707,6 +805,32 @@
             background-repeat: no-repeat;
             height: 644px;
         }
+
+        /*FOOTER*/
+        .footerlaptop {
+            display: grid;
+            grid-gap: 5vw;
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .picturefooter {
+            display: grid;
+            grid-template-columns: [col] 1fr [col] 1fr;
+            grid-template-rows: [row] 20px [row] 90px [row] 250px;
+        }
+      
+        .picturefooter > svg {
+            height: 100px;
+            justify-self: center;
+        }
+      
+        .lillepige {
+          border-radius: 100px;
+          justify-self: center;
+          align-self: center;
+          grid-column: col / span 2;
+          grid-row: row 3;
+      }
         
     }
 
@@ -755,6 +879,6 @@
             height: 603px;
         }
         
-
+       
     
     }
