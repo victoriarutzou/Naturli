@@ -84,7 +84,7 @@
         max-width: 150px; 
     }
 
- .btn { /*Burger menu*/
+    .btn { /*Burger menu*/
         background-image: url(photos/bars.svg);
         background-repeat: no-repeat;
         border-style: none;
@@ -94,12 +94,12 @@
         height: 50px;
         padding-bottom: 10px;
     }
- /*
- .barscontainer { 
+ /*.barscontainer { 
     display: flex;
     justify-content: end; /*sørger for at burgerikonet er helt til højre*/
- }*/
+ */
 
+ 
 
  .dropdown {
         display: inline-block;
@@ -115,6 +115,7 @@
         overflow: auto;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         background-color: white;
+        width: 100vw;
     }
 
  .dropdown:hover .dropdown-content {
@@ -271,8 +272,7 @@
  }
 
  .stepbystep {
-    display:grid;
-    grid-template-columns: 1fr; 
+    display:grid; 
     justify-items: center;
     background-color: white;
  }
@@ -365,11 +365,12 @@ form {
  .games {
      display:grid; 
      grid-template-columns: [col]1fr [col]1fr [col]1fr; /*deler siden op i tre lige store dele*/
-     grid-template-rows: 300px repeat (4, 110px);
+     grid-template-rows: 300px 110px 110px 110px 110px;
      justify-items: center;
      align-items: center;
      background-color: #589c83;
-     grid-gap: 10px;
+     grid-row-gap: 10px;
+     grid-row-gap: 10px;
  }
 
  .gamestext {
@@ -492,10 +493,6 @@ form {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /*opdeler products sektionen i tre lige store dele*/
             grid-template-rows: 100px 250px 60px 100px; /*giver hver af de 3 kollonner 4 rækker*/
-            grid-area: "    .     sectiontext leaf"
-                        "product   product   product"
-                        "text1     text2     text3"
-                        "   .       button    .";
             justify-items: center;
             align-items: center;
         }
@@ -512,10 +509,6 @@ form {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /*opdeler products sektionen i tre lige store dele*/
             grid-template-rows: 100px 250px 50px 150px 50px 70px; /*giver hver af de 3 kollonner 4 rækker*/
-            grid-area: "    .     sectiontext leaf"
-                        "product   product   product"
-                        "text1     text2     text3"
-                        "   .       button    .";
             justify-items: center;
             align-items: center;
         }
@@ -526,23 +519,18 @@ form {
         }
         
         .stepbystep >img {
-            border-radius: 12px;
             padding-bottom: 10px;
         }
         .stepbystep > p {
             justify-self: start;
-            align-self: start;
         }
         .leaf1 {
         display: block;    
         width: 100px;
         justify-self:start;}
         
-        .greens {width: 200px}
         
-        .stepbystep > .btn1 {
-            align-self: center;
-        }
+    
        /*FOOTER*/
        .footermobile { /*skjuler mobile layoutet til footeren*/
            display: none;
@@ -685,10 +673,6 @@ form {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /*opdeler products sektionen i tre lige store dele*/
             grid-template-rows: 100px 390px 100px 100px; /*giver hver af de 3 kollonner 4 rækker*/
-            grid-area: "    .     sectiontext leaf"
-                        "product   product   product"
-                        "text1     text2     text3"
-                        "   .       button    .";
             justify-items: center;
             align-items: center;
         }
@@ -729,35 +713,20 @@ form {
         grid-row: row 3;
         }
         /*PESTO SANDWICH OPSKRIFT*/
-        .space {display:block;}
+        
         .headerrecipe {
             background-image: url(photos/sandwich_1200.png);
             background-repeat: no-repeat;
             height: 540px;
         }
+        .space {display:block;}
         .stepbystep {
             display:grid;
-            grid-template-columns: 330px 2fr 20px 330px 2fr; /*5 kolonner*/
+            grid-template-columns: 330px 1fr 20px 330px 1fr; /*5 kolonner*/
             grid-template-rows: 100px 220px 220px 220px 220px;
             justify-items: center;
         }
 
-        .stepbystep >img {
-            border-radius: 12px;
-        }
-        .stepbystep > p {
-            justify-self: start;
-            align-self: start;
-        }
-        .leaf1 {
-        width: 100px;
-        justify-self:start;}
-
-        .greens {width: 200px}
-
-        .stepbystep > .btn1 {
-            align-self: center;
-        }
        
     } 
   
