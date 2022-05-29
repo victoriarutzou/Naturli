@@ -66,7 +66,8 @@
  .space, /*whitespace, der skjules på mobilversion*/
  .leaf1, /*skjuler dekorativt blad på opskriften*/
  .picturefooter, /*skjuler et dekorativts billede i footeren på mobilversionen*/
- .footerlaptop /*skjuler laptop layoutet til footeren*/
+ .footerlaptop, /*skjuler laptop layoutet til footeren*/
+ .gameslaptop /*skjuler laptop layoutet til sektionen leg og læring*/
  {display: none;} 
 
  
@@ -223,7 +224,7 @@
  .recipesmobile {
      display: grid;
      grid-template-columns: 1fr;
-     grid-template-rows: repeat(2, 220px 70px 20px) 50px; /*8 rækker*/
+     grid-template-rows: repeat(2, 220px 70px 20px) 50px; /*8 reakker*/
      align-items: center;
      justify-items: center;
  }
@@ -360,8 +361,46 @@ form {
     padding-right: 40px;
 }
 
- 
+ /*LEG OG LÆRING*/
+ .games {
+     display:grid; 
+     grid-template-columns: [col]1fr [col]1fr [col]1fr; /*deler siden op i tre lige store dele*/
+     grid-template-rows: 300px repeat (4, 110px);
+     justify-items: center;
+     align-items: center;
+     background-color: #589c83;
+     grid-gap: 10px;
+ }
 
+ .gamestext {
+     grid-column: col / span 3;
+     text-align: center;
+     width: 40vw;
+ }
+
+ .square {
+     height: 110px;
+     width: 90.03px; 
+     background-color: #3e7661;
+     border-radius: 12px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .food {
+     max-height: 90px;
+     max-width: 80px;
+ }
+
+ .naturli {
+     font-family: 'Delius', cursive;
+     text-align: center;
+ }
+ 
+ .howto {
+     font-size: 2vw;
+ }
  
   
 
@@ -387,6 +426,7 @@ form {
  .articlesmobile {
     display: none;
  }
+
 .recipes,
 .articles {
     display: grid;
@@ -527,10 +567,6 @@ form {
            text-align:left;
        }
 
-      
-
-
-
     }
 
 
@@ -564,7 +600,7 @@ form {
         }
 
 
-        .parisertoast { /*parisertoast opskrift tilføjes*/
+        .parisertoast { /*parisertoast opskrift tilfoejes*/
             display: block;
             background-image: url(photos/parisertoast.png);
             background-repeat: no-repeat;
@@ -574,7 +610,7 @@ form {
             display: inline-block;
         }
 
-        .boywithhat { /*artiklen "Sådan taler du med dit barn om hvor mad kommer fra" vises*/
+        .boywithhat { /*artiklen "Saadan taler du med dit barn om hvor mad kommer fra" vises*/
             display: block;
             background-image: url(photos/boywithhat.png);
             background-repeat: no-repeat;
@@ -621,7 +657,6 @@ form {
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 3fr; /* Opdeler navigationen i tre dele: logo, mellemrum, links*/
-            grid-template-rows: ;
             align-items: center; /*Så logo og links står på linje*/
             background-color: #fff; /*Baggrundsfarve for navigations baren*/
             font-size: 0.5vw; /*Font størrelse der er relativ i til viewport*/
@@ -669,7 +704,7 @@ form {
             align-items: center;
         }
 
-        .tortila { /*tortila opskrift tilføjes*/
+        .tortila { /*tortila opskrift tilfoejes*/
             display: block;
             background-image: url(photos/tortila.png);
             background-repeat: no-repeat;
@@ -723,11 +758,38 @@ form {
         .stepbystep > .btn1 {
             align-self: center;
         }
-
+       
     } 
   
 
+/* LAPTOP (1043px and up) */
+ /*NORMAL MENU*/
+ @media only screen and (min-width: 1043px) {
+    .example {background: orange;}
+      /*LEG OG LÆRING*/
+      .gameslaptop {
+        display: block;
+    }
+      .games {
+        display:grid; 
+        grid-template-columns: [col]0.5fr [col]1fr [col]1fr [col]1fr [col]1fr [col]1fr [col]1fr [col]1fr; 
+        grid-template-rows:  [row]110px [row]110px [row]110px;
+        justify-items: center;
+        align-items: center;
+        background-color: #589c83;
+        grid-gap: 10px;
+    }
 
+
+    .gamestext {
+        grid-column: col / span 2;
+        grid-row: row / span 2;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+
+    }
 
 
 
