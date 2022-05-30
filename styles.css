@@ -67,7 +67,8 @@
  .leaf1, /*skjuler dekorativt blad på opskriften*/
  .picturefooter, /*skjuler et dekorativts billede i footeren på mobilversionen*/
  .footerlaptop, /*skjuler laptop layoutet til footeren*/
- .gameslaptop /*skjuler laptop layoutet til sektionen leg og læring*/
+ .gameslaptop, /*skjuler laptop layoutet til sektionen leg og læring*/
+ .malesiderlaptop /*skjuler laptop layoutet for malesider*/
  {display: none;} 
 
  
@@ -402,7 +403,14 @@ form {
  .howto {
      font-size: 2vw;
  }
- 
+ /*MALESIDER*/
+ .malesider {
+     background-color:#589c83;
+     display: grid;
+     grid-template-columns: 1fr;
+     justify-items: center;
+     align-items: center;
+ }
   
 
    
@@ -725,6 +733,23 @@ form {
             grid-template-columns: 330px 1fr 20px 330px 1fr; /*5 kolonner*/
             grid-template-rows: 100px 220px 220px 220px 220px;
             justify-items: center;
+        }
+        .malesider {display: none;}
+        .malesiderlaptop {
+            background-color:#589c83;
+            display: grid;
+            grid-template-columns: [col]2fr [col]1fr []1fr [col]1fr;
+            grid-template-rows: [row]305px [row]50px;
+            justify-items: center;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .malesiderlaptop > h1 {
+            align-self: start;
+            padding-left: 10px;
+            grid-row: row / span 2;
+
         }
 
        
