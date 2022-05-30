@@ -738,7 +738,7 @@ form {
         .malesiderlaptop {
             background-color:#589c83;
             display: grid;
-            grid-template-columns: [col]1.5fr [col]1fr []1fr [col]1fr;
+            grid-template-columns: [col]1.5fr [col]1fr [col]1fr [col]1fr;
             grid-template-rows: [row]305px [row]50px;
             justify-items: center;
             align-items: center;
